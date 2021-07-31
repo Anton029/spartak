@@ -56,121 +56,182 @@
         </div>
     </div>
     <div class="content_2_wrapper" id="content_2">
-        <div class="gallery_popup">
-            <div class="close_button">
-                <div class="stick_1"></div>
-                <div class="stick_2"></div>
-            </div>
-            <div class="popup_content">
-                <div id="left_arrow"></div>
-                <div class="slider_box">
-                    <div id="slider_tracker">
-                        <div class="slide p_img_1"></div>
-                        <div class="slide p_img_2"></div>
-                        <div class="slide p_img_3"></div>
-                        <div class="slide p_img_4"></div>
-                        <div class="slide p_img_5"></div>
-                        <div class="slide p_img_6"></div>
-                        <div class="slide p_img_7"></div>
-                        <div class="slide p_img_8"></div>
-                        <div class="slide p_img_9"></div>
-                        <div class="slide p_img_10"></div>
+
+        
+    <div class="gallery_popup">
+        <div class="close_button">
+            <div class="stick_1"></div>
+            <div class="stick_2"></div>
+        </div>
+        <div class="popup_content">
+            <div class="arrow" id="left_arrow"></div>
+            <div class="slider_box">
+                <div class="slider_tracker" data-slider="premium">
+                    <div class="slide">
+                        <img src="pictures/platinum_1.jpeg">
+                    </div>
+                    <div class="slide">
+                        <img src="pictures/platinum_2.jpeg">
+                    </div>
+                    <div class="slide">
+                        <img src="pictures/platinum_3.jpeg">
+                    </div>
+                    <div class="slide">
+                        <img src="pictures/platinum_4.jpeg">
+                    </div>
+                    <div class="slide">
+                        <img src="pictures/platinum_5.jpeg">
+                    </div>
+                    <div class="slide">
+                        <img src="pictures/platinum_6.jpeg">
+                    </div>
+                    <div class="slide">
+                        <img src="pictures/platinum_7.jpeg">
+                    </div>
+                    <div class="slide">
+                        <img src="pictures/platinum_8.jpeg">
+                    </div>
+                    <div class="slide">
+                        <img src="pictures/platinum_9.jpeg">
+                    </div>
+                    <div class="slide">
+                        <img src="pictures/platinum_10.jpeg">
                     </div>
                 </div>
-                <div id="right_arrow"></div>
+                <div class="slider_tracker" data-slider="gold">
+                    <div class="slide">
+                        <img src="pictures/gold_1.jpeg">
+                    </div>
+                    <div class="slide">
+                        <img src="pictures/gold_2.jpeg">
+                    </div>
+                    <div class="slide">
+                        <img src="pictures/gold_3.jpeg">
+                    </div>
+                    <div class="slide">
+                        <img src="pictures/gold_4.jpeg">
+                    </div>
+                    <div class="slide">
+                        <img src="pictures/gold_5.jpeg">
+                    </div>
+                    <div class="slide">
+                        <img src="pictures/gold_6.jpeg">
+                    </div>
+                    <div class="slide">
+                        <img src="pictures/gold_7.jpeg">
+                    </div>
+                    <div class="slide">
+                        <img src="pictures/gold_8.jpeg">
+                    </div>
+                </div>                
+                <div class="slider_tracker" data-slider="silver">
+                    <div class="slide">
+                        <img src="pictures/silver_1.jpeg">
+                    </div>
+                    <div class="slide">
+                        <img src="pictures/silver_2.jpeg">
+                    </div>
+                    <div class="slide">
+                        <img src="pictures/silver_3.jpeg">
+                    </div>
+                    <div class="slide">
+                        <img src="pictures/silver_4.jpeg">
+                    </div>
+                    <div class="slide">
+                        <img src="pictures/silver_5.jpeg">
+                    </div>
+                    <div class="slide">
+                        <img src="pictures/silver_6.jpeg">
+                    </div>
+                </div>                    
+                <div class="slider_tracker" data-slider="bronze">
+                    <div class="slide">
+                        <img src="pictures/bronze_1.jpeg">
+                    </div>
+                    <div class="slide">
+                        <img src="pictures/bronze_2.jpeg">
+                    </div>
+                    <div class="slide">
+                        <img src="pictures/bronze_3.jpeg">
+                    </div>
+                    <div class="slide">
+                        <img src="pictures/bronze_4.jpeg">
+                    </div>
+                    <div class="slide">
+                        <img src="pictures/bronze_5.jpeg">
+                    </div>
+                    <div class="slide">
+                        <img src="pictures/bronze_6.jpeg">
+                    </div>
+                    <div class="slide">
+                        <img src="pictures/bronze_7.jpeg">
+                    </div>
+                </div>                
             </div>
+            <div class="arrow" id="right_arrow"></div>
         </div>
+    </div>
 
         <div class="big_title">Категории лож</div>
         <div class="content_2">
             <div class="lodge_categories_wrapper">
                 <div class="categories_title_wrapper">
-                    <div class="category_title selected" data-category="0">Platinum</div>
-                    <div class="category_title" data-category="1">Gold</div>
-                    <div class="category_title" data-category="2">Silver</div>
-                    <div class="category_title" data-category="3">Bronze</div>
+                    <div class="category_title selected" data-category="0">
+                        Platinum
+                        <input type="radio" name="category" checked="true">
+                    </div>
+                    <div class="category_title" data-category="1">
+                        Gold
+                        <input type="radio" name="category">
+                    </div>
+                    <div class="category_title" data-category="2">
+                        Silver
+                        <input type="radio" name="category">
+                    </div>
+                    <div class="category_title" data-category="3">
+                        Bronze
+                        <input type="radio" name="category">
+                    </div>
                 </div>
                 <div class="categories_wrapper">
                     <div class="category_body_1 visible">
                         <div class="pictures_wrapper">
-                            <div class="categories_pictures visible" data-picture="0">
-                                <div class="big_picture">
-                                    <img src="pictures/platinum_4.jpeg" alt="lodge">
+                            <div class="categories_pictures">
+                                <div class="big_picture"  data-picture="0">
+                                    <img class="premium visible" src="pictures/platinum_1.jpeg" alt="lodge">
+                                    <img class="gold" src="pictures/gold_1.jpeg" alt="lodge">
+                                    <img class="silver" src="pictures/silver_1.jpeg" alt="lodge">
+                                    <img class="bronze" src="pictures/bronze_1.jpeg" alt="lodge">
                                 </div>
-                                <div class="small_picture grid_2">
-                                    <img src="pictures/platinum_6.jpeg" alt="lodge">
+                                <div class="small_picture grid_2" data-picture="1">
+                                    <img class="premium visible" src="pictures/platinum_2.jpeg" alt="lodge">
+                                    <img class="gold" src="pictures/gold_2.jpeg" alt="lodge">
+                                    <img class="silver" src="pictures/silver_2.jpeg" alt="lodge">
+                                    <img class="bronze" src="pictures/bronze_2.jpeg" alt="lodge">
                                 </div>
-                                <div class="small_picture grid_3">
-                                    <img src="pictures/platinum_2.jpeg" alt="lodge">
+                                <div class="small_picture grid_3" data-picture="2">
+                                    <img class="premium visible" src="pictures/platinum_3.jpeg" alt="lodge">
+                                    <img class="gold" src="pictures/gold_3.jpeg" alt="lodge">
+                                    <img class="silver" src="pictures/silver_3.jpeg" alt="lodge">
+                                    <img class="bronze" src="pictures/bronze_3.jpeg" alt="lodge">
                                 </div>
-                                <div class="small_picture grid_4">
-                                    <img src="pictures/platinum_3.jpeg" alt="lodge">
+                                <div class="small_picture grid_4" data-picture="3">
+                                    <img class="premium visible" src="pictures/platinum_4.jpeg" alt="lodge">
+                                    <img class="gold" src="pictures/gold_4.jpeg" alt="lodge">
+                                    <img class="silver" src="pictures/silver_4.jpeg" alt="lodge">
+                                    <img class="bronze" src="pictures/bronze_4.jpeg" alt="lodge">
                                 </div>
-                                <div class="small_picture grid_5">
-                                    <img src="pictures/platinum_5.jpeg" alt="lodge">
+                                <div class="small_picture grid_5" data-picture="4">
+                                    <img class="premium visible" src="pictures/platinum_5.jpeg" alt="lodge">
+                                    <img class="gold" src="pictures/gold_5.jpeg" alt="lodge">
+                                    <img class="silver" src="pictures/silver_5.jpeg" alt="lodge">
+                                    <img class="bronze" src="pictures/bronze_5.jpeg" alt="lodge">
                                 </div>
-                                <div class="small_picture grid_6">
-                                    <img src="pictures/platinum_7.jpeg" alt="lodge">
-                                </div>
-                            </div>
-                            <div class="categories_pictures" data-picture="1">
-                                <div class="big_picture">
-                                    <img src="pictures/gold_1.jpeg" alt="lodge">
-                                </div>
-                                <div class="small_picture grid_2">
-                                    <img src="pictures/gold_2.jpeg" alt="lodge">
-                                </div>
-                                <div class="small_picture grid_3">
-                                    <img src="pictures/gold_3.jpeg" alt="lodge">
-                                </div>
-                                <div class="small_picture grid_4">
-                                    <img src="pictures/gold_4.jpeg" alt="lodge">
-                                </div>
-                                <div class="small_picture grid_5">
-                                    <img src="pictures/gold_5.jpeg" alt="lodge">
-                                </div>
-                                <div class="small_picture grid_6">
-                                    <img src="pictures/gold_6.jpeg" alt="lodge">
-                                </div>
-                            </div>
-                            <div class="categories_pictures" data-picture="2">
-                                <div class="big_picture">
-                                    <img src="pictures/silver_1.jpeg" alt="lodge">
-                                </div>
-                                <div class="small_picture grid_2">
-                                    <img src="pictures/silver_2.jpeg" alt="lodge">
-                                </div>
-                                <div class="small_picture grid_3">
-                                    <img src="pictures/silver_3.jpeg" alt="lodge">
-                                </div>
-                                <div class="small_picture grid_4">
-                                    <img src="pictures/silver_4.jpeg" alt="lodge">
-                                </div>
-                                <div class="small_picture grid_5">
-                                    <img src="pictures/silver_5.jpeg" alt="lodge">
-                                </div>
-                                <div class="small_picture grid_6">
-                                    <img src="pictures/silver_6.jpeg" alt="lodge">
-                                </div>
-                            </div>
-                            <div class="categories_pictures" data-picture="3">
-                                <div class="big_picture">
-                                    <img src="pictures/bronze_1.jpeg" alt="lodge">
-                                </div>
-                                <div class="small_picture grid_2">
-                                    <img src="pictures/bronze_2.jpeg" alt="lodge">
-                                </div>
-                                <div class="small_picture grid_3">
-                                    <img src="pictures/bronze_3.jpeg" alt="lodge">
-                                </div>
-                                <div class="small_picture grid_4">
-                                    <img src="pictures/bronze_4.jpeg" alt="lodge">
-                                </div>
-                                <div class="small_picture grid_5">
-                                    <img src="pictures/bronze_5.jpeg" alt="lodge">
-                                </div>
-                                <div class="small_picture grid_6">
-                                    <img src="pictures/bronze_6.jpeg" alt="lodge">
+                                <div class="small_picture grid_6" data-picture="5">
+                                    <img class="premium visible" src="pictures/platinum_6.jpeg" alt="lodge">
+                                    <img class="gold" src="pictures/gold_6.jpeg" alt="lodge">
+                                    <img class="silver" src="pictures/silver_6.jpeg" alt="lodge">
+                                    <img class="bronze" src="pictures/bronze_6.jpeg" alt="lodge">
                                 </div>
                             </div>
                         </div>
@@ -222,80 +283,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="category_body_2 hidden">
-                        <div class="categories_pictures">
-                            <div class="big_picture">
-                                <img src="pictures/gold_1.jpeg" alt="lodge">
-                            </div>
-                            <div class="small_picture grid_2">
-                                <img src="pictures/gold_2.jpeg" alt="lodge">
-                            </div>
-                            <div class="small_picture grid_3">
-                                <img src="pictures/gold_3.jpeg" alt="lodge">
-                            </div>
-                            <div class="small_picture grid_4">
-                                <img src="pictures/gold_4.jpeg" alt="lodge">
-                            </div>
-                            <div class="small_picture grid_5">
-                                <img src="pictures/gold_5.jpeg" alt="lodge">
-                            </div>
-                            <div class="small_picture grid_6">
-                                <img src="pictures/gold_6.jpeg" alt="lodge">
-                            </div>
-                        </div>
-                        <div class="adv_list">
-                            <div id="go_to_purchase_wrapper">
-                                <div id="go_to_purchase">Перейти к покупке</div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-
-                <!--<div class="categories_advantages">
-                    <div class="adv_list">
-                        <ul>
-                            <li>Вместимость от 16 до 51</li>
-                            <li>Расположение центральное «Супер»</li>
-                            <li>Собственный выход</li>
-                            <li>ТВ-трансляция внутри ложи</li>
-                            <li>Мягкие диваны и кресла</li>
-                            <li>Большой обеденный стол и удобные сиденья</li>
-                            <li>Личная зона гардероба</li>
-                            <li>Отдельный от общей зоны санузел </li>
-                        </ul>
-                        <ul>
-                            <li>Вместимость от 13 до 16</li>
-                            <li>Расположение центральное</li>
-                            <li>Собственный выход балкон и удобные зрительские места</li>
-                            <li>ТВ трансляция внутри ложи</li>
-                            <li>Мягкие диваны и кресла</li>
-                            <li>Большой обеденный стол и удобные стулья</li>
-                            <li>Личная зона гардероба</li>
-                            <li>Отдельный от общей зоны санузел</li>
-                        </ul>
-                        <ul>
-                            <li>Вместимость от 14 до 17</li>
-                            <li>расположение боковое</li>
-                            <li>Собственный выход балкон и удобные зрительские места</li>
-                            <li>ТВ трансляция внутри ложи</li>
-                            <li>Большой обеденный стол и удобные сиденья</li>
-                            <li>Мягкие кресла и журнальные столики</li>
-                            <li>Гардеробная</li>
-                            <li>Отдельный от общей зоны санузел</li>
-                        </ul>
-                        <ul>
-                            <li>Вместимость до 17</li>
-                            <li>Расположение за поротами</li>
-                            <li>Собственный выход балкон и удобные зрительские места</li>
-                            <li>ТВ трансляция внутри ложи</li>
-                            <li>Мягкий диван, кресло</li>
-                            <li>Большой обеденный стол и удобные сиденья</li>
-                            <li>Гардеробная</li>
-                            <li>Отдельный от общей зоны санузел/санузел расположен рядом с ложей</li>
-                        </ul>
-                    </div>
-                </div>-->
-
             </div>
         </div>
     </div>
