@@ -1,19 +1,9 @@
-//adaptive fix
-let windowHeight = window.innerHeight;
-adaptiveFix = $('.content_1_wrapper, .content_2_wrapper')
-adaptiveFix.css('height', `${windowHeight}`);
-//
-
-const category_buttons = $('.categoriy_title')
-const applyButton = document.getElementById('application_button_wrapper')
-
-category_buttons.click(function () {
-    category_buttons.removeClass('selected')
-    let category = Number(parseInt(this.dataset.category));
-    $(`.categoriy_title[data-category=${category}]`).addClass('selected')
-})
-
-let content_2 = document.getElementById('content_2')
+//buttons scrollTo
+const applyButton = document.getElementById('application_button_wrapper');
+const content_2 = document.querySelector('.content_2_wrapper');
+const goToPurhcase_1 = document.querySelector('#go_to_purchase_wrapper');
+const content_3 = document.querySelector('.content_3_wrapper');
+const nextButton = document.querySelector('.next_button');
 
 applyButton.addEventListener('click', function(){
     let sliderPosition = content_2.offsetTop;
@@ -24,121 +14,284 @@ applyButton.addEventListener('click', function(){
     });
 })
 
+goToPurhcase_1.addEventListener('click', function (){
+    let scrollPosition = content_3.offsetTop
+    window.scrollTo({
+        left: 0,
+        top: scrollPosition,
+        behavior: 'smooth'
+    })
+})
+//buttons scrollTo end
+const categoryButtons = document.querySelector('.categories_title_wrapper');
+const categories = document.querySelectorAll('.category_title');
+const categoriesAdvantages = document.querySelectorAll('.list')
+const bigPics = document.querySelectorAll('.big_picture img')
+const smallPicsImg = document.querySelectorAll('.small_picture img')
+const smallPics = document.querySelectorAll('.small_picture')
+const rentDay = document.querySelector('.calendar_wrapper .date')
+const categoriesNames = ['premium', 'gold', 'silver', 'bronze']
+const minSeatsAmount = [16, 13, 14, 1]
+const maxSeatsAmount = [51, 16, 17, 17]
+let tabData = 0
 
-// const applButton = document.getElementById('application_button');
-// const slider = document.getElementById('sliderPositiotn');
-// const categoryButtons = $('.category');
-// let adv;
-// const advantages = $('.advantage');
-// let categoryButtonsData = $('[data-category]');
-// const advantagesData = document.querySelectorAll('[data-advantage]');
-// let category_selected = Number(4);
-// const typeRentButtons = $('.rent_type_text');
-// const track = document.getElementById('slide_tracker');
-// const previousSlide = document.getElementById('back_arrow');
-// const sliderBigTitle = document.getElementById('big_title_slider');
-// const nextSlide = document.getElementById('purchase_button');
-// const progressBar = document.getElementById('prog_bar_marker');
-// const lodgeTitle = document.getElementById('slide_title');
+function formRest(){
+    lodgeSelect.innerHTML = 'Выберите ложу'
+    nextButton.classList.remove('active')
+}
 
-// const slideServiceButtons = $('.butt[data-service-button]');
-// const columnMarker = $('.column_marker');
-// //column_marker_anim
+function tabsHandler(data){
+    document.querySelector('.location_choice').innerHTML = `Категория ${categoriesNames[data]}`
 
-// let SliderBigTitlesList =
-// ['Категории лож', 'Выберите расположение', 'Выберите Уровень сервиса', 'Выберите питание', 'Форма бронирования'];
+    document.querySelector(`.list[data-adv="${data}"]`).classList.add('visible')
+
+    bigPics.forEach(el => {
+        el.classList.remove('visible')
+    })
+
+    smallPicsImg.forEach(el => {
+        el.classList.remove('visible')
+    })
+
+    smallPics.forEach(el => {
+        el.querySelector(`.${categoriesNames[data]}`).classList.add('visible')
+    })
+
+    document.querySelector(`.big_picture .${categoriesNames[data]}`).classList.add('visible')
+}
+
+function amountSeatsRewrite(tabData){
+    document.querySelector('.amount_text span').innerHTML = minSeatsAmount[tabData]
+    document.querySelector('.input_wrapper .min_value').innerHTML = minSeatsAmount[tabData]
+    document.querySelector('.input_wrapper .max_value').innerHTML = maxSeatsAmount[tabData]
+    document.querySelector('.input_wrapper .amount_input').setAttribute('min', `${minSeatsAmount[tabData]}`)
+    document.querySelector('.input_wrapper .amount_input').setAttribute('max', `${maxSeatsAmount[tabData]}`)
+    document.querySelector('.input_wrapper .amount_input').value = `${minSeatsAmount[tabData]}`
+    maxInputValue = inputSlider.getAttribute('max')
+    minInputValue = inputSlider.getAttribute('min')
+    fullProgWidth = document.querySelector('.input_wrapper').offsetWidth
+    progWidth = fullProgWidth / (maxInputValue - minInputValue)
+    inputProgressBar.style.width = '0px'
+}
+
+categoryButtons.addEventListener('click', (e) => {
+    if(e.target.classList.contains('category_title')) {
+        document.querySelector(`.category_title[data-category="${tabData}"]`).classList.remove('selected')
+        document.querySelector(`.list[data-adv="${tabData}"]`).classList.remove('visible')
+
+        tabData = e.target.dataset.category;
+
+        amountSeatsRewrite(tabData)
+
+        document.querySelector(`.category_title[data-category="${tabData}"]`).classList.add('selected')
+        document.querySelector(`.category_title[data-category="${tabData}"]`).querySelector('input').checked = true
+        tabsHandler(tabData)
+        formRest()
+    }
+})
 
 
+const rentTypeWindow = document.querySelector('.rent_details')
+const rentTypeButtons = document.querySelector('.rent_type_wrapper')
+const defaultHeight = rentTypeWindow.offsetHeight 
+const rentWindowResize = document.querySelector('.calendar_wrapper').offsetHeight
 
+var rentType = 0;
+rentTypeButtons.addEventListener('click', (e) =>{
+    if (e.target.classList.contains('rent_type')) {
+        document.querySelector(`.rent_type[data-rent-type="${rentType}"]`).classList.remove('selected')
+        rentType = parseInt(e.target.dataset.rentType)
+        document.querySelector(`.rent_type[data-rent-type="${rentType}"]`).classList.add('selected')
+        document.querySelector(`.rent_type[data-rent-type="${rentType}"]`).querySelector('input').checked = true
 
+        if (rentType == 0) {
+            rentTypeWindow.style.cssText = `height: ${defaultHeight}`
+            calendarBody.style.cssText = 'transform: translateY(-40%) scaleY(0);'
+            document.querySelector('.calendar_wrapper').style.cssText = 'z-index: 6'
+        }
+        if (rentType == 1) {
+            rentTypeWindow.style.cssText = `height: ${defaultHeight + rentWindowResize + 10}px`
+            if (nextButton.classList.contains('active')) {
+                nextButton.classList.remove('active')
+            }
+        }
+    }
+})
 
-// slideServiceButtons.click(function tableInput() {
+const locationInput = document.querySelectorAll('.locations_wrapper input')
+locationInput.forEach((e) => {
+    e.addEventListener('click', () => {
+        document.querySelector(`.category_title[data-category="${tabData}"]`).classList.remove('selected')
+        document.querySelector(`.list[data-adv="${tabData}"]`).classList.remove('visible')
 
-// console.log(parseInt(this.dataset.serviceButton));
+        tabData = e.dataset.location
+        amountSeatsRewrite(tabData)
 
-// buttonNumber = parseInt(this.dataset.serviceButton);
+        document.querySelector(`.category_title[data-category="${tabData}"]`).classList.add('selected')
+        document.querySelector(`.category_title[data-category="${tabData}"]`).querySelector('input').checked = true
+        tabsHandler(tabData)
+        formRest()
+    })
+})
 
-// slideServiceButtons.removeClass('button_red')
+const inputSlider = document.querySelector('.amount_input')
+const inputSeats = document.querySelector('.amount_text span')
+const inputProgressBar = document.querySelector('.progress_bar')
+let maxInputValue = inputSlider.getAttribute('max')
+let minInputValue = inputSlider.getAttribute('min')
+let fullProgWidth = document.querySelector('.input_wrapper').offsetWidth
+let progWidth = fullProgWidth / (maxInputValue - minInputValue)
 
-// $(`.butt[data-service-button=${buttonNumber}]`).addClass('button_red');
+inputSlider.oninput = (() => {
+    let inputValue = Number(inputSlider.value)
+    let progressPos = (inputValue - minInputValue)
+    inputSeats.innerHTML = `${inputValue}`
+    inputProgressBar.style.width = `${(progressPos * progWidth)}px`;
+})
 
-// $(`#service_radio_${buttonNumber}`).prop('checked', true);
+const lodgeSelect = document.querySelector('.select_header')
+const selectList = document.querySelectorAll('.select_body')
+const selectItems = document.querySelectorAll('.select_item')
+let isHoverOnSelectList = false;
+let isHoverOnSelectButton = false;
 
-// columnMarker.css({'transform': `translateX(calc( ${buttonNumber - 1} * (100% + 30px - 2px) ) )`});
-// columnMarker.addClass('column_marker_anim');
-// })
+selectItems.forEach((e) => {
+    e.addEventListener('click', () => {
+        let itemValue = e.innerHTML
+        lodgeSelect.innerHTML = itemValue
+        document.querySelector(`.select_body[data-location-select="${tabData}"]`).classList.remove('visible')
+        let elem = document.querySelector(`.select_body[data-location-select="${tabData}"]`)
+        elem.style.cssText = 'transform: translateX(40px)';
+        if (!nextButton.classList.contains('active')) {
+            nextButton.classList.add('active')
+        }
+    })
+})
 
+let calendarButton = document.querySelector('.calendar')
+let calendarBody = document.querySelector('.calendar_body_wrapper')
 
-// typeRentButtons.click(function () {
-// const statusBar = document.getElementById('status_bar_2');
-// const choiceDetalis = document.getElementById('choice_detalis');
-// let data = Number(this.dataset.rentType);
+let isHoverOnCalendarBody = false
+let isHoverOnCalendarButton = false
+let date
 
-// if (data === 1) {
-//     statusBar.style.cssText = 'transform: translateX(0px)'
+$(function() {
+    $('.calendar_body').datepicker();
 
-//     choiceDetalis.style.cssText = 'transform: translateY(calc(-7vh - 10px))'
-// }
-
-// if (data === 2) {
-//     statusBar.style.cssText = 'transform: translateX(100%)'
+    $('.calendar_body').change(() => {
     
-//     choiceDetalis.style.cssText = 'transform: translateY(0px)'
-// }
+        date = $('.calendar_body').val()
+        $('.calendar .date').html(`${date}`)
+        console.log('work');
+        
+        // calendarBody.style.cssText = ''
+        // $('.calendar_wrapper').css({'z-index': '6'})
+        $('.next_button').addClass('active')
+    })
+});
+
+let eleme = document.querySelector('.calendar_body_wrapper')
+eleme.style.cssText = 'margin-bottom: 200px';
+
+
+calendarBody.addEventListener('mouseenter', async() => {
+    isHoverOnCalendarBody = true
+    document.querySelector('.calendar_wrapper').style.cssText = 'z-index: 8'
+    calendarBody.style.cssText = 'transform: translateY(calc(-100% + 10px)) scaleY(1)'
+})
+
+// calendarBody.addEventListener('mouseleave', async() => {
+//     isHoverOnCalendarBody = false
+//     setTimeout(() => {
+//         if (isHoverOnCalendarBody == false && isHoverOnCalendarButton == false) {
+//             calendarBody.style.cssText = ';'
+//             setTimeout(() => {
+//                 document.querySelector('.calendar_wrapper').style.cssText = 'z-index: 6'
+//             }, 300)
+//         }
+//     }, 600)
 // })
 
-// let advList = {
-// category_1: [0, 1, 2, 3, 4, 5, 6, 7],
-// category_2: [0, 1, 2, 3, 4, 5],
-// category_3: [0, 1, 2, 3],
-// category_4: [0, 1],
-// };
+calendarButton.addEventListener('click', async() => {
+    document.querySelector('.calendar_wrapper').style.cssText = 'z-index: 8'
+    calendarBody.style.cssText = 'transform: translateY(calc(-100% + 10px)) scaleY(1)'
+})
 
-// applButton.addEventListener('click', function (){
-// let sliderPosition = slider.offsetTop;
-// window.scrollTo({
-//     left: 0,
-//     top: sliderPosition,
-//     behavior: 'smooth'
-// });
-// console.log(sliderPosition);
+calendarButton.addEventListener('mouseenter', async() => {
+    isHoverOnCalendarButton = true
+    setTimeout(() => {
+        if (isHoverOnCalendarButton == true) {
+            document.querySelector('.calendar_wrapper').style.cssText = 'z-index: 8'
+            calendarBody.style.cssText = 'transform: translateY(calc(-100% + 10px)) scaleY(1)'
+        }
+    }, 600)
+})
+
+// calendarButton.addEventListener('mouseleave', async() => {
+//     isHoverOnCalendarButton = false
+//     setTimeout(() => {
+//         if (isHoverOnCalendarBody == false && isHoverOnCalendarButton == false) {
+//             calendarBody.style.cssText = ''
+//             setTimeout(() => {
+//                 document.querySelector('.calendar_wrapper').style.cssText = 'z-index: 6'
+//             }, 300)
+//         }
+//     }, 600)
 // })
 
+// calendar.addEventListener('click', () => {
+//     document.querySelector('.calendar_body_wrapper').style.cssText = 'transform: translateY(0px)'
+//     document.querySelector('.calendar_visible_area')
+// })
 
-// categoryButtons.click(function clickCategory(){
-// category_selected = Number(this.dataset.category);
-// categoryButtons.removeClass('selected_category');
-// $(`.category[data-category=${category_selected}]`).addClass('selected_category');
+lodgeSelect.addEventListener('click', () =>{
+    document.querySelector(`.select_body[data-location-select="${tabData}"]`).classList.add('visible')
+    let elem = document.querySelector(`.select_body[data-location-select="${tabData}"]`)
+    elem.style.cssText = 'transform: translateX(0px)';
+})
 
-// advantages.removeClass('advantage_selected');
+lodgeSelect.addEventListener('mouseover', () =>{
+    isHoverOnSelectButton = true;
+    document.querySelector('.user_choice_wrapper').style.cssText = 'z-index: 7'
+    setTimeout(function (){
+       if (isHoverOnSelectButton == true) {
+            document.querySelector(`.select_body[data-location-select="${tabData}"]`).classList.add('visible')
+            let elem = document.querySelector(`.select_body[data-location-select="${tabData}"]`)
+            elem.style.cssText = 'transform: translateX(0px)';
+       }
+    }, 600)
+})
 
-// $(`#check_${category_selected}`).prop('checked', true);
+lodgeSelect.addEventListener('mouseout', () =>{
+    isHoverOnSelectButton = false;
+    setTimeout(function (){
+        if (isHoverOnSelectList == false && isHoverOnSelectButton == false) {
+            document.querySelector(`.select_body[data-location-select="${tabData}"]`).classList.remove('visible')
+            let elem = document.querySelector(`.select_body[data-location-select="${tabData}"]`)
+            elem.style.cssText = 'transform: translateX(40px)';
+            setTimeout(() => {
+                document.querySelector('.user_choice_wrapper').style.cssText = 'z-index: 5'
+            }, 300)
+        }
+    }, 600)
+})
 
-// if (category_selected === 1) {
-//     for (cat of advList.category_1) {
-//         $(`.advantage[data-advantage=${cat + 1}]`).addClass('advantage_selected')
-//     }
-//     lodgeTitle.innerHTML = 'Фотографии VIP-ложи категории «Platinum»'
-// };
+selectList.forEach((e) => {
+    e.addEventListener('mouseenter', () => {
+        isHoverOnSelectList = true
+    })
+})
 
-// if (category_selected === 2) {
-//     for (cat of advList.category_2) {
-//         $(`.advantage[data-advantage=${cat + 1}]`).addClass('advantage_selected')
-//     }
-//     lodgeTitle.innerHTML = 'Фотографии VIP-ложи категории «Gold»'
-// };
+selectList.forEach((e) => {
+    e.addEventListener('mouseleave', () => {
+        isHoverOnSelectList = false
 
-// if (category_selected === 3) {
-//     for (cat of advList.category_3) {
-//         $(`.advantage[data-advantage=${cat + 1}]`).addClass('advantage_selected')
-//     }
-//     lodgeTitle.innerHTML = 'Фотографии VIP-ложи категории «Silver»'
-// };
-
-// if (category_selected === 4) {
-//     for (cat of advList.category_4) {
-//         $(`.advantage[data-advantage=${cat + 1}]`).addClass('advantage_selected')
-//     }
-//     lodgeTitle.innerHTML = 'Фотографии VIP-ложи категории «Bronze»'
-// };    
-// });
+        setTimeout(function(){
+            if (isHoverOnSelectList == false && isHoverOnSelectButton != true) {
+                document.querySelector(`.select_body[data-location-select="${tabData}"]`).classList.remove('visible')
+                let elem = document.querySelector(`.select_body[data-location-select="${tabData}"]`)
+                elem.style.cssText = 'transform: translateX(40px)';
+            }
+        }, 600)
+    })
+})
