@@ -5,10 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="styles/style.min.css">
+    <link rel="stylesheet" href="styles/jquery-ui.theme.css">
+    <link rel="stylesheet" href="styles/jquery-ui.structure.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/datepicker-ru.js"></script>
     <title>Спартак</title>
 </head>
 <body class="page_wrapper">
-
     <div class="gallery_popup">
         <div class="close_button">
             <div class="stick_1"></div>
@@ -311,6 +315,8 @@
                     <div class="input_wrapper">
                         <div class="progress_bar"></div>
                         <input class="amount_input" type="range" value="16" min="16" max="51">
+                        <div class="min_value">16</div>
+                        <div class="max_value">51</div>
                     </div>
                 </div>
                 <div class="location_wrapper">
@@ -318,28 +324,28 @@
                     <div class="locations_wrapper">
                         <div class="location">
                             <label for="loc_1">
-                                <input type="radio" id="loc_1" name="location" checked='true'>
+                                <input type="radio" id="loc_1" name="location" checked='true' data-location="0">
                                 <span class="check"></span>
                                 Центральное «Супер»
                             </label>
                         </div>
                         <div class="location">
                             <label for="loc_2">
-                                <input type="radio" id="loc_2" name="location">
+                                <input type="radio" id="loc_2" name="location" data-location="1">
                                 <span class="check"></span>
                                 Центральные
                             </label>
                         </div>
                         <div class="location">
                             <label for="loc_3">
-                                <input type="radio" id="loc_3" name="location">
+                                <input type="radio" id="loc_3" name="location" data-location="2">
                                 <span class="check"></span>
                                 Боковые
                             </label>
                         </div>
                         <div class="location">
                             <label for="loc_4">
-                                <input type="radio" id="loc_4" name="location">
+                                <input type="radio" id="loc_4" name="location" data-location="3">
                                 <span class="check"></span>
                                 За воротами
                             </label>
@@ -406,11 +412,14 @@
                             </div>                                        
                         </div>
                     </div>
-                    <div class="calendar_wrapper">
-                        <div class="calendar">
-                            <div class="date">Выберите дату</div>
-                            <div class="icon"></div>
-                        </div>
+                </div>
+                <div class="calendar_wrapper">
+                    <div class="calendar">
+                        <div class="date">Выберите дату</div>
+                        <div class="icon"></div>
+                    </div>
+                    <div class="calendar_body_wrapper">
+                        <div class="calendar_body"></div>
                     </div>
                 </div>
                 <div class="next_button_wrapper">
