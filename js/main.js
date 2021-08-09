@@ -3,6 +3,7 @@ const applyButton = document.getElementById('application_button_wrapper');
 const content_2 = document.querySelector('.content_2_wrapper');
 const goToPurhcase_1 = document.querySelector('#go_to_purchase_wrapper');
 const content_3 = document.querySelector('.content_3_wrapper');
+const content_4 = document.querySelector('.content_4_wrapper');
 const nextButton = document.querySelector('.next_button');
 
 applyButton.addEventListener('click', function(){
@@ -78,8 +79,12 @@ categoryButtons.addEventListener('click', (e) => {
     if(e.target.classList.contains('category_title')) {
         document.querySelector(`.category_title[data-category="${tabData}"]`).classList.remove('selected')
         document.querySelector(`.list[data-adv="${tabData}"]`).classList.remove('visible')
+        
+        document.querySelector('.locations_wrapper').querySelector(`input[data-location="${tabData}"`).checked = false
 
         tabData = e.target.dataset.category;
+
+        document.querySelector('.locations_wrapper').querySelector(`input[data-location="${tabData}"`).checked = true
 
         amountSeatsRewrite(tabData)
 
@@ -108,10 +113,13 @@ rentTypeButtons.addEventListener('click', (e) =>{
             rentTypeWindow.style.cssText = `height: ${defaultHeight}`
             calendarBody.style.cssText = 'transform: translateY(-40%) scaleY(0);'
             document.querySelector('.calendar_wrapper').style.cssText = 'z-index: 6'
+            if (lodgeSelect.innerHTML != 'Выберите ложу') {
+                nextButton.classList.add('active')
+            }
         }
         if (rentType == 1) {
-            rentTypeWindow.style.cssText = `height: ${defaultHeight + rentWindowResize + 10}px`
-            if (nextButton.classList.contains('active')) {
+            rentTypeWindow.style.cssText = `height: ${defaultHeight + rentWindowResize + 5}px`
+            if (nextButton.classList.contains('active') && document.querySelector('.calendar .date').innerHTML == 'Выберите дату') {
                 nextButton.classList.remove('active')
             }
         }
@@ -123,7 +131,8 @@ locationInput.forEach((e) => {
     e.addEventListener('click', () => {
         document.querySelector(`.category_title[data-category="${tabData}"]`).classList.remove('selected')
         document.querySelector(`.list[data-adv="${tabData}"]`).classList.remove('visible')
-
+        
+        document.querySelector(`.select_body[data-location-select="${tabData}"]`).classList.remove('visible')
         tabData = e.dataset.location
         amountSeatsRewrite(tabData)
 
@@ -162,7 +171,12 @@ selectItems.forEach((e) => {
         document.querySelector(`.select_body[data-location-select="${tabData}"]`).classList.remove('visible')
         let elem = document.querySelector(`.select_body[data-location-select="${tabData}"]`)
         elem.style.cssText = 'transform: translateX(40px)';
-        if (!nextButton.classList.contains('active')) {
+        
+        let selectedDate = document.querySelector('.calendar_wrapper .date').innerHTML
+
+        if (!nextButton.classList.contains('active') && rentType != 1
+            ||
+            !nextButton.classList.contains('active') && selectedDate != 'Выберите дату') {
             nextButton.classList.add('active')
         }
     })
@@ -173,76 +187,67 @@ let calendarBody = document.querySelector('.calendar_body_wrapper')
 
 let isHoverOnCalendarBody = false
 let isHoverOnCalendarButton = false
-let date
 
 $(function() {
     $('.calendar_body').datepicker();
-
-    $('.calendar_body').change(() => {
-    
-        date = $('.calendar_body').val()
-        $('.calendar .date').html(`${date}`)
-        console.log('work');
-        
-        // calendarBody.style.cssText = ''
-        // $('.calendar_wrapper').css({'z-index': '6'})
-        $('.next_button').addClass('active')
-    })
 });
 
-let eleme = document.querySelector('.calendar_body_wrapper')
-eleme.style.cssText = 'margin-bottom: 200px';
+$('.calendar_body').change(() => {
+    
+    let date = $('.calendar_body').val()
+    $('.calendar .date').html(`${date}`)
+    calendarBody.style.cssText = ('transform', 'translateY(-40%) scaleY(0)')
 
+    if (lodgeSelect.innerHTML != 'Выберите ложу') {
+        nextButton.classList.add('active')
+    }
+})
 
 calendarBody.addEventListener('mouseenter', async() => {
     isHoverOnCalendarBody = true
-    document.querySelector('.calendar_wrapper').style.cssText = 'z-index: 8'
-    calendarBody.style.cssText = 'transform: translateY(calc(-100% + 10px)) scaleY(1)'
+    // console.log('ent');
+    // document.querySelector('.calendar_wrapper').style.cssText = 'z-index: 8'
+    // calendarBody.style.cssText = 'transform: translateY(calc(-100% + 10px)) scaleY(1)'
 })
 
-// calendarBody.addEventListener('mouseleave', async() => {
-//     isHoverOnCalendarBody = false
-//     setTimeout(() => {
-//         if (isHoverOnCalendarBody == false && isHoverOnCalendarButton == false) {
-//             calendarBody.style.cssText = ';'
-//             setTimeout(() => {
-//                 document.querySelector('.calendar_wrapper').style.cssText = 'z-index: 6'
-//             }, 300)
-//         }
-//     }, 600)
+calendarBody.addEventListener('mouseleave', async() => {
+    isHoverOnCalendarBody = false
+    setTimeout(() => {
+        if (isHoverOnCalendarBody == false && isHoverOnCalendarButton == false) {
+            calendarBody.style.cssText = ';'
+            setTimeout(() => {
+                document.querySelector('.calendar_wrapper').style.cssText = 'z-index: 6'
+            }, 300)
+        }
+    }, 600)
+})
+
+// calendarButton.addEventListener('click', async() => {
+//     document.querySelector('.calendar_wrapper').style.cssText = 'z-index: 8'
+//     document.querySelector('.calendar_body_wrapper').style.cssText = 'transform: translateY(calc(-100%)) scaleY(1)'
 // })
-
-calendarButton.addEventListener('click', async() => {
-    document.querySelector('.calendar_wrapper').style.cssText = 'z-index: 8'
-    calendarBody.style.cssText = 'transform: translateY(calc(-100% + 10px)) scaleY(1)'
-})
 
 calendarButton.addEventListener('mouseenter', async() => {
     isHoverOnCalendarButton = true
     setTimeout(() => {
         if (isHoverOnCalendarButton == true) {
             document.querySelector('.calendar_wrapper').style.cssText = 'z-index: 8'
-            calendarBody.style.cssText = 'transform: translateY(calc(-100% + 10px)) scaleY(1)'
+            calendarBody.style.cssText = 'transform: translateY(calc(-100%)) scaleY(1)'
         }
     }, 600)
 })
 
-// calendarButton.addEventListener('mouseleave', async() => {
-//     isHoverOnCalendarButton = false
-//     setTimeout(() => {
-//         if (isHoverOnCalendarBody == false && isHoverOnCalendarButton == false) {
-//             calendarBody.style.cssText = ''
-//             setTimeout(() => {
-//                 document.querySelector('.calendar_wrapper').style.cssText = 'z-index: 6'
-//             }, 300)
-//         }
-//     }, 600)
-// })
-
-// calendar.addEventListener('click', () => {
-//     document.querySelector('.calendar_body_wrapper').style.cssText = 'transform: translateY(0px)'
-//     document.querySelector('.calendar_visible_area')
-// })
+calendarButton.addEventListener('mouseleave', async() => {
+    isHoverOnCalendarButton = false
+    setTimeout(() => {
+        if (isHoverOnCalendarBody == false && isHoverOnCalendarButton == false) {
+            calendarBody.style.cssText = ''
+            setTimeout(() => {
+                document.querySelector('.calendar_wrapper').style.cssText = 'z-index: 6'
+            }, 300)
+        }
+    }, 600)
+})
 
 lodgeSelect.addEventListener('click', () =>{
     document.querySelector(`.select_body[data-location-select="${tabData}"]`).classList.add('visible')
@@ -252,8 +257,9 @@ lodgeSelect.addEventListener('click', () =>{
 
 lodgeSelect.addEventListener('mouseover', () =>{
     isHoverOnSelectButton = true;
-    document.querySelector('.user_choice_wrapper').style.cssText = 'z-index: 7'
-    setTimeout(function (){
+
+    document.querySelector('.user_choice_wrapper').style.cssText = 'z-index: 8'
+    setTimeout(() => {
        if (isHoverOnSelectButton == true) {
             document.querySelector(`.select_body[data-location-select="${tabData}"]`).classList.add('visible')
             let elem = document.querySelector(`.select_body[data-location-select="${tabData}"]`)
@@ -264,13 +270,15 @@ lodgeSelect.addEventListener('mouseover', () =>{
 
 lodgeSelect.addEventListener('mouseout', () =>{
     isHoverOnSelectButton = false;
-    setTimeout(function (){
+    setTimeout(() => {
         if (isHoverOnSelectList == false && isHoverOnSelectButton == false) {
             document.querySelector(`.select_body[data-location-select="${tabData}"]`).classList.remove('visible')
             let elem = document.querySelector(`.select_body[data-location-select="${tabData}"]`)
             elem.style.cssText = 'transform: translateX(40px)';
             setTimeout(() => {
-                document.querySelector('.user_choice_wrapper').style.cssText = 'z-index: 5'
+                if (isHoverOnSelectButton == false) {
+                    document.querySelector('.user_choice_wrapper').style.cssText = 'z-index: 5'
+                }
             }, 300)
         }
     }, 600)
@@ -286,7 +294,7 @@ selectList.forEach((e) => {
     e.addEventListener('mouseleave', () => {
         isHoverOnSelectList = false
 
-        setTimeout(function(){
+        setTimeout(() => {
             if (isHoverOnSelectList == false && isHoverOnSelectButton != true) {
                 document.querySelector(`.select_body[data-location-select="${tabData}"]`).classList.remove('visible')
                 let elem = document.querySelector(`.select_body[data-location-select="${tabData}"]`)
@@ -295,3 +303,89 @@ selectList.forEach((e) => {
         }, 600)
     })
 })
+
+const nextButton_2 = document.querySelector('.next_button')
+
+nextButton_2.addEventListener('click', () => {
+    if (nextButton_2.classList.contains('active')) {
+        let scrollPosition = content_4.offsetTop
+        window.scrollTo({
+            left: 0,
+            top: scrollPosition,
+            behavior: 'smooth'
+        })
+    }
+})
+
+const tableHeaders = document.querySelectorAll('.table .table_header')
+const tableButtons = document.querySelectorAll('.table .table_footer .button')
+let dataTable = 0
+
+tableHeaders.forEach((e) => {
+    e.addEventListener('click', () => {
+        console.log(parseInt(e.dataset.service))
+        tableHeaders[dataTable].classList.remove('active')
+        tableButtons[dataTable].classList.remove('active')
+
+        tableItems.forEach((e) => {
+            let out = e.querySelectorAll('.item')[dataTable].querySelectorAll('.icon')
+            out.forEach((e) => {
+                e.classList.remove('bright');
+            })
+        })
+
+        dataTable = parseInt(e.dataset.service)
+
+        tableItems.forEach((e) => {
+            let out = e.querySelectorAll('.item')[dataTable].querySelectorAll('.icon')
+            out.forEach((e) => {
+                e.classList.add('bright');
+            })
+        })
+
+        tableButtons[dataTable].classList.add('active')
+        tableHeaders[dataTable].classList.add('active')
+    })
+})
+
+let tableItems = document.querySelectorAll('.table_content .table_row')
+
+tableButtons.forEach((e) => {
+    e.addEventListener('click', () => {
+        console.log(parseInt(e.dataset.service))
+        tableHeaders[dataTable].classList.remove('active')
+        tableButtons[dataTable].classList.remove('active')
+
+        tableItems.forEach((e) => {
+            let out = e.querySelectorAll('.item')[dataTable].querySelectorAll('.icon')
+            out.forEach((e) => {
+                e.classList.remove('bright');
+            })
+        })
+
+        dataTable = parseInt(e.dataset.service)
+
+        tableItems.forEach((e) => {
+            let out = e.querySelectorAll('.item')[dataTable].querySelectorAll('.icon')
+            out.forEach((e) => {
+                e.classList.add('bright');
+            })
+        })
+
+        tableButtons[dataTable].classList.add('active')
+        tableHeaders[dataTable].classList.add('active')
+    })
+})
+
+
+// let test = document.querySelectorAll('.table_row .table_cell')
+
+// tableItems.forEach((e) => {
+//     // let elem = e.querySelectorAll('.table_cell')[1].querySelector('.item').querySelector('.icon')
+//     // // elem.forEach((el) => {
+//     // //     el.classList.add('mod')
+//     // // })
+//     // console.log(elem.classList.remove('bright'));
+//     // // elem.classList.remove('bright')
+    
+//     })

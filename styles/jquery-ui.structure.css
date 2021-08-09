@@ -275,3 +275,37 @@
 	left: .5em;
 	top: .3em;
 }
+
+
+
+	.ui-datepicker-calendar
+	{
+		height: 280px;
+	}
+	
+	.ui-datepicker table
+	{
+		margin-bottom: 0px;
+		padding-bottom: 15px;
+	}
+	
+	.ui-state-default
+	{
+		height: 40px;
+	}
+	
+	.ui-datepicker td span, .ui-datepicker td a {
+		display: flex;
+		padding: 0px;
+		text-align: center;
+		justify-content: center;
+		align-items: center;
+		text-decoration: none;
+		border-radius: 5px;
+	}
+
+
+
+@media screen and (max-width: 1366px){
+
+}

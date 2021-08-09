@@ -449,11 +449,16 @@ a.ui-button:active,
 	box-shadow: -8px -8px 8px #333333;
 }
 
+
+.ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next
+{
+	top: auto;
+}
+
 @media screen and (max-width: 1920px){
 	.ui-widget {
 		font-family: Arial,sans-serif;
 		font-size: 20px;
-		height: 100%;
 		width: 100%;
 		margin: 0px;
 	}
