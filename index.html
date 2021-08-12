@@ -19,7 +19,7 @@
             <div class="stick_2"></div>
         </div>
         <div class="popup_content">
-            <div class="arrow" id="left_arrow"></div>
+            <div class="arrow left_arrow"></div>
             <div class="slider_box">
                 <div class="slider_tracker" data-slider="premium">
                     <div class="slide">
@@ -123,12 +123,35 @@
                     </div>
                 </div>                
             </div>
-            <div class="arrow" id="right_arrow"></div>
+            <div class="arrow right_arrow"></div>
+        </div>
+    </div>
+    <div class="food_popup">
+        <div class="close_button">
+            <div class="stick_1"></div>
+            <div class="stick_2"></div>
+        </div>
+        <div class="popup_content">
+            <div class="arrow left_arrow"></div>
+            <div class="slider_box">
+                <div class="slider_tracker">
+                    <div class="slide" data-slider-img="1"></div>
+                    <div class="slide" data-slider-img="2"></div>
+                    <div class="slide" data-slider-img="3"></div>
+                    <div class="slide" data-slider-img="4"></div>
+                    <div class="slide" data-slider-img="5"></div>
+                    <div class="slide" data-slider-img="6"></div>
+                    <div class="slide" data-slider-img="7"></div>
+                    <div class="slide" data-slider-img="8"></div>
+                    <div class="slide" data-slider-img="9"></div>
+                </div>
+            </div>
+            <div class="arrow right_arrow"></div>
         </div>
     </div>
 
     <div class="content_1_wrapper">
-        <header class="header_wrapper">         
+        <header class="header_wrapper scroll_fix">         
                 <div class="logo_wrapper">
                     <a href="#">
                         <div class="logo"></div>
@@ -161,7 +184,8 @@
         <div class="content_1">
             <div class="down_section_1">
                 <div class="big_text">
-                    VIP-ложи и премиальные места<br>
+                    VIP-ложи и премиальные<br class="br_mobile">
+                    места<br class="br_desktop">
                     на матчи <span>ХК «Спартак»</span> <br>
                     Хоккей с комфортом
                 </div>
@@ -177,8 +201,8 @@
             </div>
         </div>
     </div>
-    <div class="content_2_wrapper scroll_fix">
-        <div class="content_2_body">
+    <div class="content_2_wrapper">
+        <div class="content_2_body scroll_fix">
             <div class="big_title">Категории лож</div>
             <div class="content_2">
                 <div class="lodge_categories_wrapper">
@@ -296,7 +320,7 @@
         </div>
     </div>
     <div class="content_3_wrapper">
-        <div class="content_3_body">
+        <div class="content_3_body scroll_fix">
             <div class="arena_section">
                 <div class="title">Выберите расположение</div>
                 <div class="arena"></div>
@@ -432,7 +456,7 @@
         </div>
     </div>
     <div class="content_4_wrapper">
-        <div class="content_4">
+        <div class="content_4 scroll_fix">
             <div class="big_title">Выберите Уровень сервиса</div>
             <div class="service_level_table">
                 <div class="table">
@@ -834,5 +858,176 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="js/main.min.js"></script>
+    <div class="content_5_wrapper">
+        <div class="content_5_body scroll_fix">
+            <div class="title">Выберите питание</div>
+            <div class="catering_wrapper">
+                <div class="catering">
+                    <div class="set">
+                        <div class="set_title">Сет Золото</div>
+                        <div class="set_description">
+                            - Cредиземноморская кухня, 
+                            наполненная палитрами 
+                            рыбных и мясных блюд, 
+                            а также элитный сыр 
+                            собственного производства 
+                            известной сыроварни. </div>
+                        <div class="set_description">
+                            - безлимитная карта
+                            с большим ассортиментов
+                            напитков.
+                        </div>
+                        <div class="set_button_wrapper">
+                            <div class="button"></div>
+                            <div class="see_menu">
+                                <a href="#">Ознакомится с меню</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="set">
+                        <div class="set_title">Сет Серебро</div>
+                        <div class="set_description">
+                            -Сочетание 
+                            средиземноморской кухни, 
+                            а также паназиатской.
+                        </div>
+                        <div class="set_description">
+                            - безлимитная карта 
+                            с напитками. 
+                        </div>
+                        <div class="set_button_wrapper">
+                            <div class="button"></div>
+                            <div class="see_menu">
+                                <a href="#">Ознакомится с меню</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="set">
+                        <div class="set_title">Сет Бронза</div>
+                        <div class="set_description">
+                            - Средиземноморская кухня
+                        </div>
+                        <div class="set_description">
+                            - Лимитированная карта 
+                            с напитками 
+                        </div>
+                        <div class="set_button_wrapper">
+                            <div class="button"></div>
+                            <div class="see_menu">
+                                <a href="#">Ознакомится с меню</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="set">
+                        <div class="set_title">Без питания</div>
+                        <div class="set_description">
+                            - Аренда без питания
+                        </div>
+                        <div class="set_button_wrapper">
+                            <div class="button"></div>
+                            <div class="see_menu"></div>
+                        </div>
+                    </div>
+                    <div class="mobile_catering">
+                        <div class="catering_sets_wrapper">
+                            <div class="flex_row">
+                                <div class="set" data-catering="0">Без питания</div>
+                                <div class="set" data-catering="1">Сет Бронза</div>
+                            </div>
+                            <div class="flex_row">
+                                <div class="set active" data-catering="2">Сет Золото</div>
+                                <div class="set" data-catering="3">Сет Серебро</div>
+                            </div>
+                        </div>
+                        <div class="catering_body">
+                            <div class="set_desc">
+                                <div class="set_title">
+                                    Без питания
+                                </div>
+                                <div class="set_text_wrapper">
+                                    <div class="set_text">
+                                       - Аренда без питания
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="set_desc">
+                                <div class="set_title">
+                                    Сет Бронза
+                                </div>
+                                <div class="set_text_wrapper">
+                                    <div class="set_text">
+                                        - Средиземноморская кухня
+                                    </div>
+                                    <div class="set_text">
+                                       - Лимитированная карта 
+                                        с напитками 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="set_desc visible">
+                                <div class="set_title">
+                                    Сет Золото
+                                </div>
+                                <div class="set_text_wrapper">
+                                    <div class="set_text">
+                                        - Cредиземноморская кухня, 
+                                        наполненная палитрами 
+                                        рыбных и мясных блюд, 
+                                        а также элитный сыр 
+                                        собственного производства 
+                                        известной сыроварни.
+                                    </div>
+                                    <div class="set_text">
+                                        - безлимитная карта
+                                        с большим ассортиментов
+                                        напитков.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="set_desc">
+                                <div class="set_title">
+                                    Сет Серебро
+                                </div>
+                                <div class="set_text_wrapper">
+                                    <div class="set_text">
+                                        -Сочетание 
+                                        средиземноморской кухни, 
+                                        а также паназиатской.
+                                    </div>
+                                    <div class="set_text">
+                                        - безлимитная карта 
+                                        с напитками. 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="choice_button"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="catering_gallery_wrapper">
+                <div class="see_photo">
+                    <a href="#">Смотреть фотоальбом</a>
+                </div>
+                <div class="catering_gallery">
+                    <div class="left_arrow"></div>
+                    <div class="slider_box">
+                        <div class="slider_tracker">
+                            <div class="slide" data-slider-img="1"></div>
+                            <div class="slide" data-slider-img="2"></div>
+                            <div class="slide" data-slider-img="3"></div>
+                            <div class="slide" data-slider-img="4"></div>
+                            <div class="slide" data-slider-img="5"></div>
+                            <div class="slide" data-slider-img="6"></div>
+                            <div class="slide" data-slider-img="7"></div>
+                            <div class="slide" data-slider-img="8"></div>
+                            <div class="slide" data-slider-img="9"></div>
+                        </div>
+                    </div>
+                    <div class="right_arrow"></div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/main.min.js"></script>
+    </div>
 </html>
