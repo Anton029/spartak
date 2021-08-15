@@ -880,7 +880,7 @@
                             напитков.
                         </div>
                         <div class="set_button_wrapper">
-                            <div class="button"></div>
+                            <div class="button" data-catering="0"></div>
                             <div class="see_menu">
                                 <a href="#">Ознакомится с меню</a>
                             </div>
@@ -898,7 +898,7 @@
                             с напитками. 
                         </div>
                         <div class="set_button_wrapper">
-                            <div class="button"></div>
+                            <div class="button" data-catering="1"></div>
                             <div class="see_menu">
                                 <a href="#">Ознакомится с меню</a>
                             </div>
@@ -914,7 +914,7 @@
                             с напитками 
                         </div>
                         <div class="set_button_wrapper">
-                            <div class="button"></div>
+                            <div class="button" data-catering="2"></div>
                             <div class="see_menu">
                                 <a href="#">Ознакомится с меню</a>
                             </div>
@@ -926,46 +926,22 @@
                             - Аренда без питания
                         </div>
                         <div class="set_button_wrapper">
-                            <div class="button"></div>
+                            <div class="button" data-catering="3"></div>
                             <div class="see_menu"></div>
                         </div>
                     </div>
                     <div class="mobile_catering">
                         <div class="catering_sets_wrapper">
                             <div class="flex_row">
-                                <div class="set" data-catering="0">Без питания</div>
-                                <div class="set" data-catering="1">Сет Бронза</div>
+                                <div class="set" data-catering="3">Без питания</div>
+                                <div class="set" data-catering="2">Сет Бронза</div>
                             </div>
                             <div class="flex_row">
-                                <div class="set active" data-catering="2">Сет Золото</div>
-                                <div class="set" data-catering="3">Сет Серебро</div>
+                                <div class="set active" data-catering="0">Сет Золото</div>
+                                <div class="set" data-catering="1">Сет Серебро</div>
                             </div>
                         </div>
                         <div class="catering_body">
-                            <div class="set_desc">
-                                <div class="set_title">
-                                    Без питания
-                                </div>
-                                <div class="set_text_wrapper">
-                                    <div class="set_text">
-                                       - Аренда без питания
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="set_desc">
-                                <div class="set_title">
-                                    Сет Бронза
-                                </div>
-                                <div class="set_text_wrapper">
-                                    <div class="set_text">
-                                        - Средиземноморская кухня
-                                    </div>
-                                    <div class="set_text">
-                                       - Лимитированная карта 
-                                        с напитками 
-                                    </div>
-                                </div>
-                            </div>
                             <div class="set_desc visible">
                                 <div class="set_title">
                                     Сет Золото
@@ -999,6 +975,30 @@
                                     <div class="set_text">
                                         - безлимитная карта 
                                         с напитками. 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="set_desc">
+                                <div class="set_title">
+                                    Сет Бронза
+                                </div>
+                                <div class="set_text_wrapper">
+                                    <div class="set_text">
+                                        - Средиземноморская кухня
+                                    </div>
+                                    <div class="set_text">
+                                       - Лимитированная карта 
+                                        с напитками 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="set_desc">
+                                <div class="set_title">
+                                    Без питания
+                                </div>
+                                <div class="set_text_wrapper">
+                                    <div class="set_text">
+                                       - Аренда без питания
                                     </div>
                                 </div>
                             </div>
@@ -1053,17 +1053,87 @@
                     <div class="order_data_wrapper">
                         <div class="order_title">Данные по заказу</div>
                         <div class="order_form">
-                            <div class="lodge_input_wrapper">
-                                <input placeholder="Выберите ложу" class="input" type="text">
+                            <div class="lodge_input_wrapper" data-form="0">
+                                <div class="input_text">Выберите ложу</div>
+                                <div class="footer_select" data-select="0">
+                                    <div class="select_body visible" data-location-select="0">
+                                        <div class="select_item">VIP 3</div>
+                                        <div class="select_item">VIP 2</div>
+                                        <div class="select_item">Ложа №21</div>
+                                        <div class="select_item">Ложа №20</div>
+                                        <div class="select_item">Ложа №19</div>
+                                    </div>
+                                    <div class="select_body width_fix" data-location-select="1">
+                                        <div class="select_item">VIP 1</div>
+                                        <div class="select_item">Ложа №1</div>
+                                        <div class="select_item">Ложа №2</div>
+                                        <div class="select_item">Ложа №15</div>
+                                        <div class="select_item">Ложа №16</div>
+                                        <div class="select_item">Ложа №17</div>
+                                        <div class="select_item">Ложа №18</div>
+                                        <div class="select_item">Ложа №22</div>
+                                        <div class="select_item">Ложа №23</div>
+                                        <div class="select_item">Ложа №24</div>
+                                        <div class="select_item">Ложа №25</div>
+                                        <div class="select_item">Ложа №38</div>
+                                        <div class="select_item">Ложа №39</div>
+                                    </div>                                    
+                                    <div class="select_body width_fix" data-location-select="2">
+                                        <div class="select_item">Ложа №3</div>
+                                        <div class="select_item">Ложа №4</div>
+                                        <div class="select_item">Ложа №5</div>
+                                        <div class="select_item">Ложа №6</div>
+                                        <div class="select_item">Ложа №12</div>
+                                        <div class="select_item">Ложа №13</div>
+                                        <div class="select_item">Ложа №14</div>
+                                        <div class="select_item">Ложа №26</div>
+                                        <div class="select_item">Ложа №27</div>
+                                        <div class="select_item">Ложа №28</div>
+                                        <div class="select_item">Ложа №29</div>
+                                        <div class="select_item">Ложа №35</div>
+                                        <div class="select_item">Ложа №36</div>
+                                        <div class="select_item">Ложа №37</div>
+                                    </div>                                    
+                                    <div class="select_body width_fix" data-location-select="3">
+                                        <div class="select_item">Ложа №7</div>
+                                        <div class="select_item">Ложа №8</div>
+                                        <div class="select_item">Ложа №9</div>
+                                        <div class="select_item">Ложа №10</div>
+                                        <div class="select_item">Ложа №11</div>
+                                        <div class="select_item">Ложа №30</div>
+                                        <div class="select_item">Ложа №31</div>
+                                        <div class="select_item">Ложа №32</div>
+                                        <div class="select_item">Ложа №33</div>
+                                        <div class="select_item">Ложа №34</div>
+                                    </div>     
+                                </div>
                             </div>
-                            <div class="date_input_wrapper">
-                                <input placeholder="Выберите дату" class="input" type="text">
+                            <div class="date_input_wrapper" data-form="1">
+                                <div class="input_text">Выберите дату</div>
+                                <div class="footer_select" data-select="1">
+                                    <div class="calendar_body"></div>
+                                </div>
                             </div>
-                            <div class="service_input_wrapper">
-                                <input placeholder="Выберите вид сервиса" class="input" type="text">
+                            <div class="service_input_wrapper" data-form="2">
+                                <div class="input_text">Выберите вид сервиса</div>
+                                <div class="footer_select" data-select="2">
+                                    <div class="select_body">
+                                        <div class="select_item" data-service="0">Эксклюзив</div>
+                                        <div class="select_item" data-service="1">Премиум</div>
+                                        <div class="select_item" data-service="2">Комфорт</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="catering_input_wrapper">
-                                <input placeholder="Выберите вид кейтеринга" class="input" type="text">
+                            <div class="catering_input_wrapper" data-form="3">
+                                <div class="input_text">Выберите вид кейтеринга</div>
+                                <div class="footer_select" data-select="3">
+                                    <div class="select_body">
+                                        <div class="select_item">Сет Золото</div>
+                                        <div class="select_item">Сет Серебро</div>              
+                                        <div class="select_item">Сет Бронза</div>              
+                                        <div class="select_item">Без питания</div>                  
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
