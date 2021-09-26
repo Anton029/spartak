@@ -4,15 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="styles/style.min.css">
-    <link rel="stylesheet" href="styles/jquery-ui.theme.css">
-    <link rel="stylesheet" href="styles/jquery-ui.structure.css">
+    <meta name="google-site-verification" content="1dWm2Ihz3NZkSzg0YmsDpEPwiaq4SnYzQX7WH-VSSqE"/>
+    <link rel="stylesheet" type="text/css" href="/styles/style.min.css">
+    <link rel="shortcut icon" type="image/png" href="icons/favicon.png"/>
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/datepicker-ru.js"></script>
     <title>Спартак</title>
 </head>
 <body class="page_wrapper">
+    <div class="presentation_popup">
+        <div class="popup_content">
+            <div class="popup_close_button"></div>
+            <div class="popup_title">
+                Добро пожаловать
+            </div>
+            <form name="presentation_form">
+                <div class="input_wrapper">
+                    <input name="name_input" class="input" placeholder="Имя Фамилия" type="text">
+                    <div class="validation_false">
+                        Введите Ваши инициалы
+                    </div>
+                </div>
+                <div class="input_wrapper">
+                    <input name="phone_input" class="input" placeholder="Телефон" type="tel">
+                    <div class="validation_false">
+                        Введите номер телефона(формат: +7 777 777 77 77)
+                    </div>
+                </div>
+                <div class="input_wrapper">
+                    <input name="mail_input" class="input" placeholder="Email" type="text">
+                </div>
+                <!--https://disk.yandex.ua/i/DP9uHNccHiMHgg-->
+                <div class="sent_form_button"></div>
+            </form>
+        </div>
+    </div>
+
     <div class="gallery_popup">
         <div class="close_button">
             <div class="stick_1"></div>
@@ -21,18 +49,12 @@
         <div class="popup_content">
             <div class="arrow left_arrow"></div>
             <div class="slider_box">
-                <div class="slider_tracker" data-slider="premium">
+                <div class="slider_tracker" data-slider="Platinum">
                     <div class="slide">
                         <img src="pictures/platinum_1.jpeg">
                     </div>
                     <div class="slide">
                         <img src="pictures/platinum_2.jpeg">
-                    </div>
-                    <div class="slide">
-                        <img src="pictures/platinum_3.jpeg">
-                    </div>
-                    <div class="slide">
-                        <img src="pictures/platinum_4.jpeg">
                     </div>
                     <div class="slide">
                         <img src="pictures/platinum_5.jpeg">
@@ -49,20 +71,8 @@
                     <div class="slide">
                         <img src="pictures/platinum_9.jpeg">
                     </div>
-                    <div class="slide">
-                        <img src="pictures/platinum_10.jpeg">
-                    </div>
                 </div>
-                <div class="slider_tracker" data-slider="gold">
-                    <div class="slide">
-                        <img src="pictures/gold_1.jpeg">
-                    </div>
-                    <div class="slide">
-                        <img src="pictures/gold_2.jpeg">
-                    </div>
-                    <div class="slide">
-                        <img src="pictures/gold_3.jpeg">
-                    </div>
+                <div class="slider_tracker" data-slider="Gold">
                     <div class="slide">
                         <img src="pictures/gold_4.jpeg">
                     </div>
@@ -70,7 +80,7 @@
                         <img src="pictures/gold_5.jpeg">
                     </div>
                     <div class="slide">
-                        <img src="pictures/gold_6.jpeg">
+                        <img src="pictures/gold_9.jpeg">
                     </div>
                     <div class="slide">
                         <img src="pictures/gold_7.jpeg">
@@ -78,19 +88,22 @@
                     <div class="slide">
                         <img src="pictures/gold_8.jpeg">
                     </div>
-                </div>                
-                <div class="slider_tracker" data-slider="silver">
                     <div class="slide">
-                        <img src="pictures/silver_1.jpeg">
+                        <img src="pictures/gold_1.jpeg">
+                    </div>
+                </div>                
+                <div class="slider_tracker" data-slider="Silver">
+                    <div class="slide">
+                        <img src="pictures/silver_4.jpeg">
                     </div>
                     <div class="slide">
                         <img src="pictures/silver_2.jpeg">
                     </div>
                     <div class="slide">
-                        <img src="pictures/silver_3.jpeg">
+                        <img src="pictures/silver_3.jpg">
                     </div>
                     <div class="slide">
-                        <img src="pictures/silver_4.jpeg">
+                        <img src="pictures/silver_1.jpeg">
                     </div>
                     <div class="slide">
                         <img src="pictures/silver_5.jpeg">
@@ -99,7 +112,7 @@
                         <img src="pictures/silver_6.jpeg">
                     </div>
                 </div>                    
-                <div class="slider_tracker" data-slider="bronze">
+                <div class="slider_tracker" data-slider="Bronze">
                     <div class="slide">
                         <img src="pictures/bronze_1.jpeg">
                     </div>
@@ -118,14 +131,12 @@
                     <div class="slide">
                         <img src="pictures/bronze_6.jpeg">
                     </div>
-                    <div class="slide">
-                        <img src="pictures/bronze_7.jpeg">
-                    </div>
                 </div>                
             </div>
             <div class="arrow right_arrow"></div>
         </div>
     </div>
+
     <div class="food_popup">
         <div class="close_button">
             <div class="stick_1"></div>
@@ -150,6 +161,18 @@
         </div>
     </div>
 
+    <div class="sent_form_popup">
+        <div class="popup_body">
+            <div class="popup_content">
+                <div class="popup_close_button"></div>
+                <div class="popup_icon">
+                    <div class="curtain"></div>
+                </div>
+                <div class="popup_title">Спасибо за Вашу заявку, наш менеджер скоро с Вами свяжется</div>
+            </div>
+        </div>
+    </div>
+
     <div class="content_1_wrapper">
         <header class="header_wrapper scroll_fix">         
                 <div class="logo_wrapper">
@@ -166,29 +189,29 @@
                         <div class="popup_contacts_wrapper">
                             <div class="mail_wrapper">
                                 <div class="mail_icon"></div>
-                                <div class="mail_address">tickets@spartak.ru</div>
+                                <div class="mail_address">vip@spartak.ru</div>
                             </div>
                             <div class="phone_wrapper">
                                 <div class="phone_icon"></div>
                                 <div class="phone_number">
-                                    +7 925 275 92 05
+                                    +7 999 599 68 62
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="mobile_call_button">
-                        <a href="tel:+79252759205"></a>
+                        <a href="tel:+79995996862"></a>
                     </div>
                 </div>
                 <div class="contacts_wrapper">
                     <div class="mail_wrapper">
                         <div class="mail_icon"></div>
-                        <div class="mail_address">tickets@spartak.ru</div>
+                        <div class="mail_address">vip@spartak.ru</div>
                     </div>
                     <div class="phone_wrapper">
                         <div class="phone_icon"></div>
                         <div class="phone_number">
-                            +7 925 275 92 05
+                            +7 999 599 68 62
                         </div>
                         <div class="small_text">Бесплатная онлайн консультация</div>
                     </div>
@@ -207,10 +230,10 @@
                 <div id="application_button_wrapper">
                     <div id="application_button">Подать заявку</div>
                 </div>
-                <div class="presentation_section">
+                <a class="presentation_section">
                     <div class="download_icon"></div>
                     <div class="download_pres">Скачать презентацию</div>
-                </div>
+                </a>
             </div>
         </div>
     </div>
@@ -241,41 +264,41 @@
                         <div class="category_body">
                             <div class="pictures_wrapper">
                                 <div class="categories_pictures">
-                                    <div class="big_picture"  data-picture="0">
-                                        <img class="premium visible" src="pictures/platinum_1.jpeg" alt="lodge">
-                                        <img class="gold" src="pictures/gold_1.jpeg" alt="lodge">
-                                        <img class="silver" src="pictures/silver_1.jpeg" alt="lodge">
-                                        <img class="bronze" src="pictures/bronze_1.jpeg" alt="lodge">
+                                    <div class="big_picture" data-picture="0">
+                                        <img class="Platinum visible" src="pictures/platinum_1.jpeg" alt="lodge">
+                                        <img class="Gold" src="pictures/gold_4.jpeg" alt="lodge">
+                                        <img class="Silver" src="pictures/silver_4.jpeg" alt="lodge">
+                                        <img class="Bronze" src="pictures/bronze_1.jpeg" alt="lodge">
                                     </div>
                                     <div class="small_picture grid_2" data-picture="1">
-                                        <img class="premium visible" src="pictures/platinum_2.jpeg" alt="lodge">
-                                        <img class="gold" src="pictures/gold_2.jpeg" alt="lodge">
-                                        <img class="silver" src="pictures/silver_2.jpeg" alt="lodge">
-                                        <img class="bronze" src="pictures/bronze_2.jpeg" alt="lodge">
+                                        <img class="Platinum visible" src="pictures/platinum_2.jpeg" alt="lodge">
+                                        <img class="Gold" src="pictures/gold_5.jpeg" alt="lodge">
+                                        <img class="Silver" src="pictures/silver_2.jpeg" alt="lodge">
+                                        <img class="Bronze" src="pictures/bronze_2.jpeg" alt="lodge">
                                     </div>
                                     <div class="small_picture grid_3" data-picture="2">
-                                        <img class="premium visible" src="pictures/platinum_3.jpeg" alt="lodge">
-                                        <img class="gold" src="pictures/gold_3.jpeg" alt="lodge">
-                                        <img class="silver" src="pictures/silver_3.jpeg" alt="lodge">
-                                        <img class="bronze" src="pictures/bronze_3.jpeg" alt="lodge">
+                                        <img class="Platinum visible" src="pictures/platinum_5.jpeg" alt="lodge">
+                                        <img class="Gold" src="pictures/gold_9.jpeg" alt="lodge">
+                                        <img class="Silver" src="pictures/silver_3.jpg" alt="lodge">
+                                        <img class="Bronze" src="pictures/bronze_3.jpeg" alt="lodge">
                                     </div>
                                     <div class="small_picture grid_4" data-picture="3">
-                                        <img class="premium visible" src="pictures/platinum_4.jpeg" alt="lodge">
-                                        <img class="gold" src="pictures/gold_4.jpeg" alt="lodge">
-                                        <img class="silver" src="pictures/silver_4.jpeg" alt="lodge">
-                                        <img class="bronze" src="pictures/bronze_4.jpeg" alt="lodge">
+                                        <img class="Platinum visible" src="pictures/platinum_6.jpeg" alt="lodge">
+                                        <img class="Gold" src="pictures/gold_7.jpeg" alt="lodge">
+                                        <img class="Silver" src="pictures/silver_1.jpeg" alt="lodge">
+                                        <img class="Bronze" src="pictures/bronze_4.jpeg" alt="lodge">
                                     </div>
                                     <div class="small_picture grid_5" data-picture="4">
-                                        <img class="premium visible" src="pictures/platinum_5.jpeg" alt="lodge">
-                                        <img class="gold" src="pictures/gold_5.jpeg" alt="lodge">
-                                        <img class="silver" src="pictures/silver_5.jpeg" alt="lodge">
-                                        <img class="bronze" src="pictures/bronze_5.jpeg" alt="lodge">
+                                        <img class="Platinum visible" src="pictures/platinum_7.jpeg" alt="lodge">
+                                        <img class="Gold" src="pictures/gold_8.jpeg" alt="lodge">
+                                        <img class="Silver" src="pictures/silver_5.jpeg" alt="lodge">
+                                        <img class="Bronze" src="pictures/bronze_5.jpeg" alt="lodge">
                                     </div>
                                     <div class="small_picture grid_6" data-picture="5">
-                                        <img class="premium visible" src="pictures/platinum_6.jpeg" alt="lodge">
-                                        <img class="gold" src="pictures/gold_6.jpeg" alt="lodge">
-                                        <img class="silver" src="pictures/silver_6.jpeg" alt="lodge">
-                                        <img class="bronze" src="pictures/bronze_6.jpeg" alt="lodge">
+                                        <img class="Platinum visible" src="pictures/platinum_8.jpeg" alt="lodge">
+                                        <img class="Gold" src="pictures/gold_1.jpeg" alt="lodge">
+                                        <img class="Silver" src="pictures/silver_6.jpeg" alt="lodge">
+                                        <img class="Bronze" src="pictures/bronze_6.jpeg" alt="lodge">
                                     </div>
                                 </div>
                             </div>
@@ -284,7 +307,7 @@
                                     <ul class="list visible" data-adv="0">
                                         <li>Вместимость от 16 до 51</li>
                                         <li>Расположение центральное «Супер»</li>
-                                        <li>Собственный выход</li>
+                                        <li>Собственный выход на балкон и удобные зрительские места</li>
                                         <li>ТВ-трансляция внутри ложи</li>
                                         <li>Мягкие диваны и кресла</li>
                                         <li>Большой обеденный стол и удобные сиденья</li>
@@ -294,7 +317,7 @@
                                     <ul class="list" data-adv="1">
                                         <li>Вместимость от 13 до 16</li>
                                         <li>Расположение центральное</li>
-                                        <li>Собственный выход балкон и удобные зрительские места</li>
+                                        <li>Собственный выход на балкон и удобные зрительские места</li>
                                         <li>ТВ трансляция внутри ложи</li>
                                         <li>Мягкие диваны и кресла</li>
                                         <li>Большой обеденный стол и удобные стулья</li>
@@ -304,7 +327,7 @@
                                     <ul class="list" data-adv="2">
                                         <li>Вместимость от 14 до 17</li>
                                         <li>расположение боковое</li>
-                                        <li>Собственный выход балкон и удобные зрительские места</li>
+                                        <li>Собственный выход на балкон и удобные зрительские места</li>
                                         <li>ТВ трансляция внутри ложи</li>
                                         <li>Большой обеденный стол и удобные сиденья</li>
                                         <li>Мягкие кресла и журнальные столики</li>
@@ -314,7 +337,7 @@
                                     <ul class="list" data-adv="3">
                                         <li>Вместимость до 17</li>
                                         <li>Расположение за поротами</li>
-                                        <li>Собственный выход балкон и удобные зрительские места</li>
+                                        <li>Собственный выход на балкон и удобные зрительские места</li>
                                         <li>ТВ трансляция внутри ложи</li>
                                         <li>Мягкий диван, кресло</li>
                                         <li>Большой обеденный стол и удобные сиденья</li>
@@ -401,58 +424,56 @@
                         <div class="select">
                             <div class="select_header">Выберите ложу</div>
                             <div class="select_body" data-location-select="0">
-                                <div class="select_item">VIP 3</div>
-                                <div class="select_item">VIP 2</div>
-                                <div class="select_item">Ложа №21</div>
-                                <div class="select_item">Ложа №20</div>
-                                <div class="select_item">Ложа №19</div>
+                                <div class="select_item" data-lodge="42">VIP 3</div>
+                                <div class="select_item" data-lodge="41">VIP 2</div>
+                                <div class="select_item" data-lodge="21">Ложа №21</div>
+                                <div class="select_item" data-lodge="20">Ложа №20</div>
+                                <div class="select_item" data-lodge="20">Ложа №19</div>
                             </div>
                             <div class="select_body width_fix" data-location-select="1">
-                                <div class="select_item">VIP 1</div>
-                                <div class="select_item">Ложа №1</div>
-                                <div class="select_item">Ложа №2</div>
-                                <div class="select_item">Ложа №15</div>
-                                <div class="select_item">Ложа №16</div>
-                                <div class="select_item">Ложа №17</div>
-                                <div class="select_item">Ложа №18</div>
-                                <div class="select_item">Ложа №22</div>
-                                <div class="select_item">Ложа №23</div>
-                                <div class="select_item">Ложа №24</div>
-                                <div class="select_item">Ложа №25</div>
-                                <div class="select_item">Ложа №38</div>
-                                <div class="select_item">Ложа №39</div>
+                                <div class="select_item" data-lodge="40">VIP 1</div>
+                                <div class="select_item" data-lodge="1">Ложа №1</div>
+                                <div class="select_item" data-lodge="2">Ложа №2</div>
+                                <div class="select_item" data-lodge="15">Ложа №15</div>
+                                <div class="select_item" data-lodge="16">Ложа №16</div>
+                                <div class="select_item" data-lodge="17">Ложа №17</div>
+                                <div class="select_item" data-lodge="18">Ложа №18</div>
+                                <div class="select_item" data-lodge="22">Ложа №22</div>
+                                <div class="select_item" data-lodge="23">Ложа №23</div>
+                                <div class="select_item" data-lodge="24">Ложа №24</div>
+                                <div class="select_item" data-lodge="25">Ложа №25</div>
+                                <div class="select_item" data-lodge="38">Ложа №38</div>
+                                <div class="select_item" data-lodge="39">Ложа №39</div>
                             </div>                                    
                             <div class="select_body width_fix" data-location-select="2">
-                                <div class="select_item">Ложа №3</div>
-                                <div class="select_item">Ложа №4</div>
-                                <div class="select_item">Ложа №5</div>
-                                <div class="select_item">Ложа №6</div>
-                                <div class="select_item">Ложа №12</div>
-                                <div class="select_item">Ложа №13</div>
-                                <div class="select_item">Ложа №14</div>
-                                <div class="select_item">Ложа №26</div>
-                                <div class="select_item">Ложа №27</div>
-                                <div class="select_item">Ложа №28</div>
-                                <div class="select_item">Ложа №29</div>
-                                <div class="select_item">Ложа №35</div>
-                                <div class="select_item">Ложа №36</div>
-                                <div class="select_item">Ложа №37</div>
+                                <div class="select_item" data-lodge="3">Ложа №3</div>
+                                <div class="select_item" data-lodge="4">Ложа №4</div>
+                                <div class="select_item" data-lodge="5">Ложа №5</div>
+                                <div class="select_item" data-lodge="16">Ложа №6</div>
+                                <div class="select_item" data-lodge="12">Ложа №12</div>
+                                <div class="select_item" data-lodge="13">Ложа №13</div>
+                                <div class="select_item" data-lodge="14">Ложа №14</div>
+                                <div class="select_item" data-lodge="26">Ложа №26</div>
+                                <div class="select_item" data-lodge="27">Ложа №27</div>
+                                <div class="select_item" data-lodge="28">Ложа №28</div>
+                                <div class="select_item" data-lodge="29">Ложа №29</div>
+                                <div class="select_item" data-lodge="35">Ложа №35</div>
+                                <div class="select_item" data-lodge="36">Ложа №36</div>
+                                <div class="select_item" data-lodge="37">Ложа №37</div>
                             </div>                                    
                             <div class="select_body width_fix" data-location-select="3">
-                                <div class="select_item">Ложа №7</div>
-                                <div class="select_item">Ложа №8</div>
-                                <div class="select_item">Ложа №9</div>
-                                <div class="select_item">Ложа №10</div>
-                                <div class="select_item">Ложа №11</div>
-                                <div class="select_item">Ложа №30</div>
-                                <div class="select_item">Ложа №31</div>
-                                <div class="select_item">Ложа №32</div>
-                                <div class="select_item">Ложа №33</div>
-                                <div class="select_item">Ложа №34</div>
+                                <div class="select_item" data-lodge="7">Ложа №7</div>
+                                <div class="select_item" data-lodge="8">Ложа №8</div>
+                                <div class="select_item" data-lodge="9">Ложа №9</div>
+                                <div class="select_item" data-lodge="10">Ложа №10</div>
+                                <div class="select_item" data-lodge="11">Ложа №11</div>
+                                <div class="select_item" data-lodge="30">Ложа №30</div>
+                                <div class="select_item" data-lodge="31">Ложа №31</div>
+                                <div class="select_item" data-lodge="32">Ложа №32</div>
+                                <div class="select_item" data-lodge="33">Ложа №33</div>
+                                <div class="select_item" data-lodge="34">Ложа №34</div>
                             </div>
-                            <div class="lodge_info">
-                                Ложа №5 на данный момент занята
-                            </div>                            
+                            <div class="server_response"></div>                            
                         </div>
                     </div>
                 </div>
@@ -502,7 +523,7 @@
                             </div>
                         </div>
                         <div class="table_row">
-                            <div class="table_cell title">Шайба-магдэй с автотрафом игрока</div>
+                            <div class="table_cell title">Шайба-матчдэй с автографом игрока</div>
                             <div class="table_cell">
                                 <div class="item">
                                     <div class="icon yes bright"></div>
@@ -572,25 +593,7 @@
                                     <div class="icon no"></div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="table_row">
-                            <div class="table_cell title">Дополнительные часы на арене в дни матчей</div>
-                            <div class="table_cell">
-                                <div class="item">
-                                    <div class="icon yes bright"></div>
-                                </div>
-                            </div>
-                            <div class="table_cell">
-                                <div class="item">
-                                    <div class="icon yes"></div>
-                                </div>
-                            </div>
-                            <div class="table_cell">
-                                <div class="item">
-                                    <div class="icon no"></div>
-                                </div>
-                            </div>
-                        </div>
+                        </div>  
                         <div class="table_row">
                             <div class="table_cell title">Сувенирные подарки</div>
                             <div class="table_cell">
@@ -764,7 +767,7 @@
                                 От 3 до 10 человек
                             </li>
                             <li>
-                                Шайба-магдэй с автотрафом игрока
+                                Шайба-матчдэй с автографом игрока
                             </li>
                             <li>
                                 Оригинальные Jersey команды
@@ -774,9 +777,6 @@
                             </li>
                             <li>
                                 Посещение тренировки команды
-                            </li>
-                            <li>
-                                Дополнительные часы на арене в дни матчей
                             </li>
                             <li>
                                 Сувенирные подарки
@@ -814,9 +814,6 @@
                             </li>
                             <li>
                                 Посещение тренировки команды
-                            </li>
-                            <li>
-                                Дополнительные часы на арене в дни матчей
                             </li>
                             <li>
                                 Сувенирные подарки
@@ -889,14 +886,14 @@
                             собственного производства 
                             известной сыроварни. </div>
                         <div class="set_description">
-                            - безлимитная карта
+                            - Безлимитная карта
                             с большим ассортиментов
                             напитков.
                         </div>
                         <div class="set_button_wrapper">
                             <div class="button" data-catering="0"></div>
                             <div class="see_menu">
-                                <a href="#">Ознакомится с меню</a>
+                                <a href="https://disk.yandex.ua/i/USxUqdZWOQM90w" target="_blank">Ознакомится с меню</a>
                             </div>
                         </div>
                     </div>
@@ -908,13 +905,13 @@
                             а также паназиатской.
                         </div>
                         <div class="set_description">
-                            - безлимитная карта 
+                            - Безлимитная карта 
                             с напитками. 
                         </div>
                         <div class="set_button_wrapper">
                             <div class="button" data-catering="1"></div>
                             <div class="see_menu">
-                                <a href="#">Ознакомится с меню</a>
+                                <a href="https://disk.yandex.ua/i/HDRx8XmpbGz4Yw" target="_blank">Ознакомится с меню</a>
                             </div>
                         </div>
                     </div>
@@ -930,7 +927,7 @@
                         <div class="set_button_wrapper">
                             <div class="button" data-catering="2"></div>
                             <div class="see_menu">
-                                <a href="#">Ознакомится с меню</a>
+                                <a href="https://disk.yandex.ua/i/pUL_wRq14UgRow" target="_blank">Ознакомится с меню</a>
                             </div>
                         </div>
                     </div>
@@ -941,7 +938,6 @@
                         </div>
                         <div class="set_button_wrapper">
                             <div class="button" data-catering="3"></div>
-                            <div class="see_menu"></div>
                         </div>
                     </div>
                     <div class="mobile_catering">
@@ -970,7 +966,7 @@
                                         известной сыроварни.
                                     </div>
                                     <div class="set_text">
-                                        - безлимитная карта
+                                        - Безлимитная карта
                                         с большим ассортиментов
                                         напитков.
                                     </div>
@@ -987,7 +983,7 @@
                                         а также паназиатской.
                                     </div>
                                     <div class="set_text">
-                                        - безлимитная карта 
+                                        - Безлимитная карта 
                                         с напитками. 
                                     </div>
                                 </div>
@@ -1023,7 +1019,7 @@
             </div>
             <div class="catering_gallery_wrapper">
                 <div class="see_photo">
-                    <a href="#">Смотреть фотоальбом</a>
+                    <a href="https://disk.yandex.ru/d/9qpLHLzRbZo25w" target="_blank">Смотреть фотоальбом</a>
                 </div>
                 <div class="catering_gallery">
                     <div class="left_arrow"></div>
@@ -1049,18 +1045,24 @@
         <div class="content_6_wrapper">
             <div class="content_6 scroll_fix">
                 <div class="form_title">Форма бронирования</div>
-                <div class="form_body">
+                <form name="user_order" class="form_body">
                     <div class="contact_data_wrapper">
                         <div class="contacts_title">Контактные данные</div>
                         <div class="contacts_form">
                             <div class="name_input_wrapper">
                                 <input class="input" type="text" placeholder="Имя Фамилия">
+                                <div class="validation_false">
+                                    Введите Ваши инициалы
+                                </div>
                             </div>
                             <div class="phone_input_wrapper">
-                                <input class="input" type="text" placeholder="Телефон">
+                                <input class="input" type="number" placeholder="Телефон">
+                                <div class="validation_false">
+                                    Введите номер телефона(формат: +7 777 777 77 77)
+                                </div>
                             </div>
                             <div class="email_input_wrapper">
-                                <input class="input" type="text" placeholder="email(необязательно)">
+                                <input class="input" type="text" placeholder="Email">
                             </div>
                         </div>
                     </div>
@@ -1068,58 +1070,68 @@
                         <div class="order_title">Данные по заказу</div>
                         <div class="order_form">
                             <div class="lodge_input_wrapper" data-form="0">
+                                <div class="server_response empty"></div>
                                 <div class="input_text">Выберите ложу</div>
                                 <div class="footer_select" data-select="0">
                                     <div class="select_body visible" data-location-select="0">
-                                        <div class="select_item">VIP 3</div>
-                                        <div class="select_item">VIP 2</div>
-                                        <div class="select_item">Ложа №21</div>
-                                        <div class="select_item">Ложа №20</div>
-                                        <div class="select_item">Ложа №19</div>
+                                        <div class="select_item" data-lodge="42">VIP 3</div>
+                                        <div class="select_item" data-lodge="41">VIP 2</div>
+                                        <div class="select_item" data-lodge="21">Ложа №21</div>
+                                        <div class="select_item" data-lodge="20">Ложа №20</div>
+                                        <div class="select_item" data-lodge="19">Ложа №19</div>
                                     </div>
                                     <div class="select_body width_fix" data-location-select="1">
-                                        <div class="select_item">VIP 1</div>
-                                        <div class="select_item">Ложа №1</div>
-                                        <div class="select_item">Ложа №2</div>
-                                        <div class="select_item">Ложа №15</div>
-                                        <div class="select_item">Ложа №16</div>
-                                        <div class="select_item">Ложа №17</div>
-                                        <div class="select_item">Ложа №18</div>
-                                        <div class="select_item">Ложа №22</div>
-                                        <div class="select_item">Ложа №23</div>
-                                        <div class="select_item">Ложа №24</div>
-                                        <div class="select_item">Ложа №25</div>
-                                        <div class="select_item">Ложа №38</div>
-                                        <div class="select_item">Ложа №39</div>
+                                        <div class="select_item" data-lodge="40">VIP 1</div>
+                                        <div class="select_item" data-lodge="1">Ложа №1</div>
+                                        <div class="select_item" data-lodge="2">Ложа №2</div>
+                                        <div class="select_item" data-lodge="15">Ложа №15</div>
+                                        <div class="select_item" data-lodge="16">Ложа №16</div>
+                                        <div class="select_item" data-lodge="17">Ложа №17</div>
+                                        <div class="select_item" data-lodge="18">Ложа №18</div>
+                                        <div class="select_item" data-lodge="22">Ложа №22</div>
+                                        <div class="select_item" data-lodge="23">Ложа №23</div>
+                                        <div class="select_item" data-lodge="24">Ложа №24</div>
+                                        <div class="select_item" data-lodge="25">Ложа №25</div>
+                                        <div class="select_item" data-lodge="38">Ложа №38</div>
+                                        <div class="select_item" data-lodge="39">Ложа №39</div>
                                     </div>                                    
                                     <div class="select_body width_fix" data-location-select="2">
-                                        <div class="select_item">Ложа №3</div>
-                                        <div class="select_item">Ложа №4</div>
-                                        <div class="select_item">Ложа №5</div>
-                                        <div class="select_item">Ложа №6</div>
-                                        <div class="select_item">Ложа №12</div>
-                                        <div class="select_item">Ложа №13</div>
-                                        <div class="select_item">Ложа №14</div>
-                                        <div class="select_item">Ложа №26</div>
-                                        <div class="select_item">Ложа №27</div>
-                                        <div class="select_item">Ложа №28</div>
-                                        <div class="select_item">Ложа №29</div>
-                                        <div class="select_item">Ложа №35</div>
-                                        <div class="select_item">Ложа №36</div>
-                                        <div class="select_item">Ложа №37</div>
+                                        <div class="select_item" data-lodge="3">Ложа №3</div>
+                                        <div class="select_item" data-lodge="4">Ложа №4</div>
+                                        <div class="select_item" data-lodge="5">Ложа №5</div>
+                                        <div class="select_item" data-lodge="6">Ложа №6</div>
+                                        <div class="select_item" data-lodge="12">Ложа №12</div>
+                                        <div class="select_item" data-lodge="13">Ложа №13</div>
+                                        <div class="select_item" data-lodge="14">Ложа №14</div>
+                                        <div class="select_item" data-lodge="26">Ложа №26</div>
+                                        <div class="select_item" data-lodge="27">Ложа №27</div>
+                                        <div class="select_item" data-lodge="28">Ложа №28</div>
+                                        <div class="select_item" data-lodge="29">Ложа №29</div>
+                                        <div class="select_item" data-lodge="35">Ложа №35</div>
+                                        <div class="select_item" data-lodge="36">Ложа №36</div>
+                                        <div class="select_item" data-lodge="37">Ложа №37</div>
                                     </div>                                    
                                     <div class="select_body width_fix" data-location-select="3">
-                                        <div class="select_item">Ложа №7</div>
-                                        <div class="select_item">Ложа №8</div>
-                                        <div class="select_item">Ложа №9</div>
-                                        <div class="select_item">Ложа №10</div>
-                                        <div class="select_item">Ложа №11</div>
-                                        <div class="select_item">Ложа №30</div>
-                                        <div class="select_item">Ложа №31</div>
-                                        <div class="select_item">Ложа №32</div>
-                                        <div class="select_item">Ложа №33</div>
-                                        <div class="select_item">Ложа №34</div>
+                                        <div class="select_item" data-lodge="7">Ложа №7</div>
+                                        <div class="select_item" data-lodge="8">Ложа №8</div>
+                                        <div class="select_item" data-lodge="9">Ложа №9</div>
+                                        <div class="select_item" data-lodge="10">Ложа №10</div>
+                                        <div class="select_item" data-lodge="11">Ложа №11</div>
+                                        <div class="select_item" data-lodge="30">Ложа №30</div>
+                                        <div class="select_item" data-lodge="31">Ложа №31</div>
+                                        <div class="select_item" data-lodge="32">Ложа №32</div>
+                                        <div class="select_item" data-lodge="33">Ложа №33</div>
+                                        <div class="select_item" data-lodge="34">Ложа №34</div>
                                     </div>     
+                                </div>
+                            </div>
+                            <div class="seats_amount_wrapper">
+                                <div class="input_wrapper">
+                                    <div class="seats_amount">Количество мест: 16</div>
+                                    <div class="progress_bar"></div>
+                                    <input class="amount_input" type="range" value="16" min="16" max="51">
+                                    <div class="min_value">16</div>
+                                    <div class="max_value">51</div>
                                 </div>
                             </div>
                             <div class="date_input_wrapper" data-form="1">
@@ -1154,7 +1166,7 @@
                     <div class="rent_button_wrapper">
                         <div class="send_form_button"></div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     </footer>
